@@ -3,13 +3,14 @@ import React, { useState } from 'react'
 import customer1Events from "./fake-charts/events-1.png";
 import customer1Performance from "./fake-charts/perf-1.png";
 import customer2Ftp from "./fake-charts/ftp-2.png";
-// import customer2Performance from "./fake-charts/perf-2.png";
+import customer2Performance from "./fake-charts/perf-2.png";
 
 import "./styles.css";
 
 const Dashboard = () => {
 
   const [customer1, setCustomer1] = useState('customer1Events')
+  const [customer2, setCustomer2] = useState('customer2FTP')
 
   const onClickHandler = (selection) => {
     switch(selection) {
@@ -19,8 +20,15 @@ const Dashboard = () => {
       case 'customer1Performance':
         setCustomer1('customer1Performance')
         break;
+      case 'customer2FTP':
+        setCustomer2('customer2FTP')
+        break;
+      case 'customer2Performance':
+        setCustomer2('customer2Performance')
+        break;
       default:
         setCustomer1('customer1Events')
+        setCustomer2('customer2FTP')
     }
   }
 
@@ -52,16 +60,20 @@ const Dashboard = () => {
         <h1>Customer 2</h1>
 
         <div className="tabs">
-          <div className="tab selected">
+          <div className="tab selected" onClick={ () => onClickHandler('customer2FTP') }>
             FTP Usage
           </div>
-          <div className="tab">
+          <div className="tab" onClick={ () => onClickHandler('customer2Performance') }>
             Performance
           </div>
         </div>
 
         <div>
+          { customer2 === 'customer2FTP' ?
             <img src={customer2Ftp} alt="FTP usage" />
+            :
+            <img src={customer2Performance} alt="FTP usage" />
+          }
         </div>
       </div>
     </div>
