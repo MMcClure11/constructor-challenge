@@ -11,8 +11,8 @@ const Dashboard = () => {
 
   const [customer1, setCustomer1] = useState('customer1Events')
 
-  const onClickHandler = (e) => {
-    e.target.getAttribute('name') === 'customer1Events' ?
+  const onClickHandler = (selection) => {
+   selection === 'customer1Events' ?
     setCustomer1('customer1Events')
     :
     setCustomer1('customer1Performance')
@@ -25,10 +25,10 @@ const Dashboard = () => {
         <h1>Customer 1</h1>
 
         <div className="tabs">
-          <div name="customer1Events" className={ customer1 === 'customer1Events' ? "tab selected" : "tab"} onClick={ (e) => onClickHandler(e) }>
+          <div className={ customer1 === 'customer1Events' ? "tab selected" : "tab"} onClick={ (e) => onClickHandler('customer1Events') }>
             Search events
           </div>
-          <div className={ customer1 === 'customer1Performance' ? "tab selected" : "tab"} onClick={ onClickHandler }>
+          <div className={ customer1 === 'customer1Performance' ? "tab selected" : "tab"} onClick={ (e) => onClickHandler('customer1Performance') }>
             Performance
           </div>
         </div>
