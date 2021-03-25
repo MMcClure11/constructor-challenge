@@ -1,8 +1,10 @@
 import React from 'react'
 
+import "./styles.css";
+
 const Dashboard = () => {
   return (
-    <div>
+    <div className="color">
       Dashboard component
     </div>
   )

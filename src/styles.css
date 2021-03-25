@@ -1,0 +1,26 @@
+.tabs {
+  display: flex;
+}
+
+.tab {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tab.selected {
+  background-color: darkseagreen;
+}
+
+.box {
+  padding: 1em;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.box + .box {
+  margin-top: 1em;
+}
+
+.color {
+  background-color: blueviolet;
+}
