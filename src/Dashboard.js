@@ -12,10 +12,16 @@ const Dashboard = () => {
   const [customer1, setCustomer1] = useState('customer1Events')
 
   const onClickHandler = (selection) => {
-   selection === 'customer1Events' ?
-    setCustomer1('customer1Events')
-    :
-    setCustomer1('customer1Performance')
+    switch(selection) {
+      case 'customer1Events':
+        setCustomer1('customer1Events')
+        break;
+      case 'customer1Performance':
+        setCustomer1('customer1Performance')
+        break;
+      default:
+        setCustomer1('customer1Events')
+    }
   }
 
   return (
