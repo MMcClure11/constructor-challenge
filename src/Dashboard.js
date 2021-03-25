@@ -1,11 +1,49 @@
 import React from 'react'
 
+import customer1Events from "./fake-charts/events-1.png";
+// import customer1Performance from "./fake-charts/perf-1.png";
+import customer2Ftp from "./fake-charts/ftp-2.png";
+// import customer2Performance from "./fake-charts/perf-2.png";
+
 import "./styles.css";
 
 const Dashboard = () => {
   return (
-    <div className="color">
-      Dashboard component
+    <div>
+      {/* Placeholder, feel free to edit the structure below */}
+      <div className="box">
+        <h1>Customer 1</h1>
+
+        <div className="tabs">
+          <div className="tab selected">
+            Search events
+          </div>
+          <div className="tab">
+            Performance
+          </div>
+        </div>
+
+        <div>
+            <img src={customer1Events} alt="Search events over time" />
+        </div>
+      </div>
+
+      <div className="box">
+        <h1>Customer 2</h1>
+
+        <div className="tabs">
+          <div className="tab selected">
+            FTP Usage
+          </div>
+          <div className="tab">
+            Performance
+          </div>
+        </div>
+
+        <div>
+            <img src={customer2Ftp} alt="FTP usage" />
+        </div>
+      </div>
     </div>
   )
 }
