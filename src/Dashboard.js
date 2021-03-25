@@ -26,10 +26,10 @@ const Dashboard = () => {
         <h1>Customer 1</h1>
 
         <div className="tabs">
-          <div className="tab selected" onClick={ onClickHandler }>
+          <div className={ customer1 === 'customer1Events' ? "tab selected" : "tab"} onClick={ onClickHandler }>
             Search events
           </div>
-          <div className="tab" onClick={ onClickHandler2 }>
+          <div className={ customer1 === 'customer1Performance' ? "tab selected" : "tab"} onClick={ onClickHandler2 }>
             Performance
           </div>
         </div>
