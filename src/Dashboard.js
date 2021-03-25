@@ -60,10 +60,10 @@ const Dashboard = () => {
         <h1>Customer 2</h1>
 
         <div className="tabs">
-          <div className="tab selected" onClick={ () => onClickHandler('customer2FTP') }>
+          <div className={ customer2 === 'customer2FTP' ? "tab selected" : "tab"} onClick={ () => onClickHandler('customer2FTP') }>
             FTP Usage
           </div>
-          <div className="tab" onClick={ () => onClickHandler('customer2Performance') }>
+          <div className={ customer2 === 'customer2Performance' ? "tab selected" : "tab"} onClick={ () => onClickHandler('customer2Performance') }>
             Performance
           </div>
         </div>
